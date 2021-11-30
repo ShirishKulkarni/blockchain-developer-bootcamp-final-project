@@ -17,6 +17,7 @@ contract NationalMonumentNFT is ERC721, ERC721Enumerable, ERC721URIStorage, Paus
     struct NFTMeta {
         uint tokenId;
         string uri;
+        address addr;
     }
 
     NFTMeta[] private nftMetaList;
@@ -39,6 +40,7 @@ contract NationalMonumentNFT is ERC721, ERC721Enumerable, ERC721URIStorage, Paus
         NFTMeta memory nftMeta;
         nftMeta.tokenId = tokenId;
         nftMeta.uri = uri;
+        nftMeta.addr = address(this);
         nftMetaList.push(nftMeta);
     }
 

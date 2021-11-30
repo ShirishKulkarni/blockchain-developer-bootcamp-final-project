@@ -1,7 +1,7 @@
 
 // SPDX-License-Identifier: MIT
 pragma solidity >=0.4.21 <0.9.0;
-import "./NationalMonumentNFT.sol";
+//import "./NationalMonumentNFT.sol";
 
 contract NFTPOLLFactory {
     address[] public nftPolls;
@@ -15,9 +15,9 @@ contract NFTPOLLFactory {
     }
 
     // deploy a new contract
-    function createNewPoll(uint _days) public returns (address  newContract)
+    function createNewPoll(uint _days, uint[] memory ids, address[] memory addresses, string[] memory uris) public returns (address  newContract)
     {
-        NFTPOLL poll = new NFTPOLL(_days);
+        NFTPOLL poll = new NFTPOLL(_days, ids, addresses, uris);
         nftPolls.push(address(poll));
         return address(poll);
     }
@@ -49,7 +49,13 @@ contract NFTPOLL {
 
 
     //constructor
-    constructor(uint _days) {
+    constructor(uint  _days, uint[] memory ids, address[] memory addresses, string[] memory uris) {
+
+        for(uint i=0; i<ids.length; i++) {
+            tokensInPoll.push(Item({nftAddr:addresses[i], tokenId:ids[i], voteCount:0, uri:uris[i]}));
+        }
+            
+
         isVotingStarted = true;
         votingEndBlockTimeStamp = block.timestamp + _days * 1 minutes;
         emit VotingStarted();
@@ -142,9 +148,10 @@ contract NFTPOLL {
         return true;
     }
 
-    function endPolling() public {
+    function endPolling() public  returns (Item[] memory) {
         isVotingComplete = true;
         emit VotingCompleted();
+        return getPollResults();
     }
 
     function vote(address _nft_addr, uint _tokenId) public VotingComplete UniqueVoter(msg.sender) returns (bool) {
@@ -193,7 +200,7 @@ contract NFTPOLL {
     }*/
 
     function getPollResults() public returns (Item[] memory) {
-        if(winners.length==0) {
+        if(winners.length == 0) {
             quickSort(tokensInPoll, int(0), int(tokensInPoll.length - 1));
             winners.push(tokensInPoll[tokensInPoll.length-1]);
             winners.push(tokensInPoll[tokensInPoll.length-2]);
