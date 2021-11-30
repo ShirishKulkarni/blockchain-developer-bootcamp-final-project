@@ -136,8 +136,7 @@ contract NFTPOLL {
         emit RegistrationForPollCompleted();
     }*/
 
-    function registerItemForPoll(address nft_addr, uint _tokenId)   public returns (bool) {
-        _uri = 
+    function registerItemForPoll(address nft_addr, uint _tokenId, string memory _uri)   public returns (bool) {
         tokensInPoll.push(Item({nftAddr:nft_addr, tokenId:_tokenId, voteCount:0, uri:_uri}));
         emit RegisterItemForPoll(msg.sender, _tokenId);
         return true;
@@ -223,7 +222,7 @@ contract NFTPOLL {
             quickSort(arr, i, right);
     }
 
-    function getAllItemsInPoll() public view returns(Item[] items){
+    function getAllItemsInPoll() public view returns(Item[] memory items){
         return tokensInPoll;
     }
 

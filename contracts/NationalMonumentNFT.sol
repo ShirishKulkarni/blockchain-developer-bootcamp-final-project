@@ -21,7 +21,7 @@ contract NationalMonumentNFT is ERC721, ERC721Enumerable, ERC721URIStorage, Paus
 
     NFTMeta[] private nftMetaList;
 
-    constructor() ERC721("NationalMonumentNFTPassCollective", "SSN") {}
+    constructor() ERC721("NationalMonumentNFTPassCollective", "NMN") {}
 
     function pause() public onlyOwner {
         _pause();
