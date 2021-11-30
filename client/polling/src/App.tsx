@@ -14,12 +14,18 @@ import {
 import { Web3ReactProvider } from '@web3-react/core'
 import Web3 from 'web3'
 import Poll from './components/componentPoll';
+declare let window: any;
 
 
 
 const App: React.FC = () => {
     const { setContract } = ContextContainer.useContainer();
 
+    useEffect(() => {
+        if (typeof window.ethereum !== 'undefined') {
+            console.log('MetaMask is installed!');
+          }
+    }, []);
     
 
     function getLibrary(provider: any) {

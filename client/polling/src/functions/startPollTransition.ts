@@ -1,28 +1,28 @@
-import getCallParameters from "./getCallParameters";
 import toast from "react-hot-toast";
-import transitionMessageAlert from "./transitionMessageAlert";
-import { decodeZilPayError } from "./decodeMessage";
-
-/* Calls claim_rent transition */
 
 const startPollTransition = async (
     contract: any,
     account: any,
     web3: any,
     ids: any[],
+    addresses : any[],
+    images: any[]
 ) => {
     try {
         const accounts = await web3.eth.getAccounts();
-        contract.methods.createNewPoll(5).send({from : accounts[0]}, function (err:any, res:any) {
-            if (err) {
-              console.log("An error occured", err)
-              return
-            }
-            console.log(res);
-          })
+        contract.methods.createNewPoll(15, ids, addresses, images)
+        .send({from : accounts[0]}) 
+        .on('transactionHash', function(hash:any){
+            toast.success("Request Submitted Successfully!");
+        })
+        .on('error', toast.error)
+        .then(function(value:any){
+            toast.success("Polling Started Successfully!");      
+            window.location.href = "/listings";
+        });
         
-    } catch (error) {
-        //toast.error(decodeZilPayError(error));
+    } catch (error:any) {
+        toast.error(error.message);
     }
 };
 

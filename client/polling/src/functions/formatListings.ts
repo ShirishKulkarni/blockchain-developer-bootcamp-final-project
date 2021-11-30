@@ -1,14 +1,14 @@
 
 
 const formatListings = async (
-    skyScraperContract: any,
+    monumentContract: any,
     pollFactoryContract: any,
     account: any,
     web3: any
 ) => {
     let contractResponse = new Array();
     const accounts = await web3.eth.getAccounts();
-    await skyScraperContract.methods.getTokenMetaList().call({ from: accounts[0] }, function (err: any, res: any) {
+    await monumentContract.methods.getTokenMetaList().call({ from: accounts[0] }, function (err: any, res: any) {
         if (err) {
             console.log("An error occured", err)
             return

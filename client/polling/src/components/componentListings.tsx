@@ -43,8 +43,10 @@ const Listings: React.FC = (props) => {
         if(!active) return;
         const web3 = new Web3(library);
         let contract = new library.eth.Contract(NFTPOLLFACTORY_ABI as any, NFTPOLLFACTORY_ADDRESS, account);
-        const ids = listings.map((element:any) => element.id);
-        startPollTransition(contract, account, web3, ids);
+        const ids = listings.filter((element:any) => !element.isPoll).map((element:any) => element.id);
+        const addresses = listings.filter((element:any) => !element.isPoll).map(() => NFTCOSMOS_ADDRESS);
+        const images = listings.filter((element:any) => !element.isPoll).map((element:any) => element.image);
+        startPollTransition(contract, account, web3, ids, addresses, images);
     }
 
 
@@ -139,7 +141,7 @@ const Listings: React.FC = (props) => {
                                                     listing
                                                 );
                                                 setShowManageListing(
-                                                    true
+                                                    false
                                                 );
                                             }}
                                         />

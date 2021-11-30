@@ -34,10 +34,6 @@ const ListingCard: React.FC<props> = (props) => {
                 }}
             >
             </div>
-            <p className="text-red-600 font-bolder">
-                {price} ETH
-                <span className="text-red-600 font-light"></span>
-            </p>
         </div>
     );
 };

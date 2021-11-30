@@ -15,7 +15,7 @@ const pollImagesTransition = async (
                 contractResponse.push({
                     id: element.tokenId,
                     image: element.uri,
-                    address: element.address,
+                    tokenAddress: element.nftAddr,
                 })
         });
     })
