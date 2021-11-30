@@ -81,4 +81,14 @@ contract NationalMonumentNFT is ERC721, ERC721Enumerable, ERC721URIStorage, Paus
     {
         return super.supportsInterface(interfaceId);
     }
+
+
+    function tokenURI2(uint256 tokenId)    public view returns (string memory uri, address addr)
+    {
+         uri = tokenURI(tokenId);
+        return (uri , address(this));
+    }
+
+
+    
 }

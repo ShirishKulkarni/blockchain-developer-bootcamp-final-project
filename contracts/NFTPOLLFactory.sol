@@ -177,7 +177,7 @@ contract NFTPOLL {
     }
 
 
-    function endPoll() public returns (uint) {
+    /*function endPoll() public returns (uint) {
         uint maxVotes;
         uint tokenId;
         address addr;
@@ -190,13 +190,15 @@ contract NFTPOLL {
         }
         emit PollWinner(maxVotes, addr, tokenId);
         return tokenId;
-    }
+    }*/
 
     function getPollResults() public returns (Item[] memory) {
-        quickSort(tokensInPoll, int(0), int(tokensInPoll.length - 1));
-        winners.push(tokensInPoll[tokensInPoll.length-1]);
-        winners.push(tokensInPoll[tokensInPoll.length-2]);
-        winners.push(tokensInPoll[tokensInPoll.length-3]);
+        if(winners.length==0) {
+            quickSort(tokensInPoll, int(0), int(tokensInPoll.length - 1));
+            winners.push(tokensInPoll[tokensInPoll.length-1]);
+            winners.push(tokensInPoll[tokensInPoll.length-2]);
+            winners.push(tokensInPoll[tokensInPoll.length-3]);
+        }
         emit Winners(winners);
         return winners;
     }
