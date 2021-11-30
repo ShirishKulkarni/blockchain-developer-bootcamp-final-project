@@ -9,7 +9,7 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/token/ERC721/extensions/ERC721Burnable.sol";
 import "@openzeppelin/contracts/utils/Counters.sol";
 
-contract SkyScrapperNFT is ERC721, ERC721Enumerable, ERC721URIStorage, Pausable, Ownable, ERC721Burnable {
+contract NationalMonumentNFT is ERC721, ERC721Enumerable, ERC721URIStorage, Pausable, Ownable, ERC721Burnable {
     using Counters for Counters.Counter;
 
     Counters.Counter private _tokenIdCounter;
@@ -21,7 +21,7 @@ contract SkyScrapperNFT is ERC721, ERC721Enumerable, ERC721URIStorage, Pausable,
 
     NFTMeta[] private nftMetaList;
 
-    constructor() ERC721("SkyScrapperNFTPassCollective", "SSN") {}
+    constructor() ERC721("NationalMonumentNFTPassCollective", "SSN") {}
 
     function pause() public onlyOwner {
         _pause();

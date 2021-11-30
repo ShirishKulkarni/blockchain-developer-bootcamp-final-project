@@ -358,7 +358,7 @@ export const NFTCOSMOS_ABI = [
 						"type": "string"
 					}
 				],
-				"internalType": "struct SkyScrapperNFT.NFTMeta[]",
+				"internalType": "struct NationalMonumentNFT.NFTMeta[]",
 				"name": "",
 				"type": "tuple[]"
 			}

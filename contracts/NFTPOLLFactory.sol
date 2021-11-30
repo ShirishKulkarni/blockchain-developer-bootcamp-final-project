@@ -1,7 +1,7 @@
 
 // SPDX-License-Identifier: MIT
 pragma solidity >=0.4.21 <0.9.0;
-import "./SkyScrapperNFT.sol";
+import "./NationalMonumentNFT.sol";
 
 contract NFTPOLLFactory {
     address[] public nftPolls;
@@ -137,7 +137,7 @@ contract NFTPOLL {
     }*/
 
     function registerItemForPoll(address nft_addr, uint _tokenId)   public returns (bool) {
-        _uri =
+        _uri = 
         tokensInPoll.push(Item({nftAddr:nft_addr, tokenId:_tokenId, voteCount:0, uri:_uri}));
         emit RegisterItemForPoll(msg.sender, _tokenId);
         return true;
