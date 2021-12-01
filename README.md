@@ -31,7 +31,7 @@ DEPLOYED in Ropsten @ `0x74a180B9280CDc2006b2B3E4ECaC9753E9503AFB`
 
 # Getting Started
 
-<!-- ### Prerequisites
+### Prerequisites
  - Node.js >= v14
  - Truffle and Ganache
  - Yarn
@@ -49,7 +49,7 @@ DEPLOYED in Ropsten @ `0x74a180B9280CDc2006b2B3E4ECaC9753E9503AFB`
   - cd client/polling
   - npm install
   - npm start
-  - Open http://localhost:3000/listings -->
+  - Open http://localhost:3000/listings
 
 ## The Technology
 
