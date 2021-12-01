@@ -1,5 +1,5 @@
 # nft-pop
-https://shirishkulkarni.github.io/listings
+https://shirishkulkarni.github.io/listings \
 video walk through: https://loom.com/share/f51ff721f69d44dfa1fa6056065b146a
 # NFT Collectible with Popularity Voting
 
