@@ -16,7 +16,7 @@ not only among minted NFT's from this Smart Contract, but also from any other sm
 - Approve - Assign spender approval for enabling TransferFrom functionality. To approve or remove spender approval for a given NFT token.
 - setApprovalForAll - To set or unset an operator for any given token owner.
 
-DEPLOYED in Ropsten @ `0xf65f5728082c640f781f48Eecb113fcF58A51421`>>>>>CHANGE THIS
+DEPLOYED in Ropsten @ `0xe29E447a054DB13d2d22583C345A1C70A2a3f699`
 
 ## NFT Most Popular Poll SmartContract Features (All features are not implemented in UI)
 - createNewPoll - To setup the base for voting by deploying a NFTPOLL contract using the NFTPOLL Factory.
@@ -25,7 +25,7 @@ DEPLOYED in Ropsten @ `0xf65f5728082c640f781f48Eecb113fcF58A51421`>>>>>CHANGE TH
 - Setup polls among NFTs and open anyone to vote for popularity
 - Show top 3 most popular NFTs . This popularity can be used to increase the value of the NFT.
 
-DEPLOYED in Ropsten @ `0xb3CDAe7968c947162E2C22B7B91859C573c0f8aE`>>>>>CHANGE THIS
+DEPLOYED in Ropsten @ `0x74a180B9280CDc2006b2B3E4ECaC9753E9503AFB`
 
 # Getting Started
 
@@ -107,6 +107,6 @@ PS: Since any new address needs to be whitelisted for Minting, sharing the above
 
 
 
-## Public Ethereum wallet for certification:
-0x733F6e7D995d7f9054506FF98836eED5770B4289  >>>>>CHANGE THIS
+## Public Ethereum wallet for certification as NFT:
+0x5144d13B1F50225067D353b26de50f241bE10e89  
 
