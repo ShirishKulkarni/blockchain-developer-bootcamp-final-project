@@ -1,4 +1,5 @@
 # nft-pop
+https://shirishkulkarni.github.io/listings
 # NFT Collectible with Popularity Voting
 
 This project is a National Monuments Access Pass NFT Collectible smart contract where you can mint NFTs as a representation of lifetime Access Pass for that National Monuments.
@@ -47,7 +48,7 @@ DEPLOYED in Ropsten @ `0x74a180B9280CDc2006b2B3E4ECaC9753E9503AFB`
   - cd client/polling
   - npm install
   - npm start
-  - Open http://localhost:3000/listing -->
+  - Open http://localhost:3000/listings -->
 
 ## The Technology
 
