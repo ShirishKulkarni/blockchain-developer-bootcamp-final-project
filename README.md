@@ -1,5 +1,6 @@
 # nft-pop
 https://shirishkulkarni.github.io/listings
+video walk through: https://loom.com/share/f51ff721f69d44dfa1fa6056065b146a
 # NFT Collectible with Popularity Voting
 
 This project is a National Monuments Access Pass NFT Collectible smart contract where you can mint NFTs as a representation of lifetime Access Pass for that National Monuments.
