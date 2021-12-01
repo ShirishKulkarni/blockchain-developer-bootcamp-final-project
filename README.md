@@ -93,7 +93,6 @@ cd client/polling (From Base directory)
 Ropsten Metamask Account (Final deployed project) \
 Public address - 0x4F32Dbc5A984dd6525bd7896e54e14389F3EaE27 \  
 
-PS: Since any new address needs to be whitelisted for Minting, sharing the above Metamask details in TestNet for easy access.
 ## Simple workflow
 
 1. Enter the web site
