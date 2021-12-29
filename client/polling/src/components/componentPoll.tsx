@@ -13,6 +13,7 @@ import { NFTPOLL_ABI } from "../config";
 import Web3 from 'web3';
 import pollImagesTransition from "../functions/pollImagesTransition";
 import endPollingTransition from "../functions/endPollingTransition";
+import getWinnersTransition from '../functions/getWinnersTransition';
 import { useWeb3React } from "@web3-react/core"
 import { useParams } from "react-router-dom";
 
@@ -37,7 +38,12 @@ const Poll: React.FC = () => {
         (async () => {
             const web3Ref = new Web3(library);
             let contract = new library.eth.Contract(NFTPOLL_ABI as any, id, account);
-            pollImagesTransition(contract, account, web3Ref).then(value => setListings(value));
+            if(isActive === "true"){
+                pollImagesTransition(contract, account, web3Ref).then(value => setListings(value));
+            }else{
+                getWinnersTransition(contract, account, web3Ref, responseCallBack);
+            }
+
         })();
     }, [active]);
 
@@ -73,7 +79,7 @@ const Poll: React.FC = () => {
                             );
                         })}
                     </div>
-                    {isActive != "true" ? 
+                    {isActive == "true" ?
                     (<div className="order-1">
                         <div className="top-32 p-6 w-full">
                             <Button

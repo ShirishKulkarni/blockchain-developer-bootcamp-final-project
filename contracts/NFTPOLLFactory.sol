@@ -210,6 +210,10 @@ contract NFTPOLL {
         return winners;
     }
 
+    function pollWinners() public view returns (Item[] memory) {
+        return winners;
+    }
+
 
     function quickSort(Item[] memory arr, int left, int right) internal{
         int i = left;

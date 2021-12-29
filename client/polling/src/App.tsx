@@ -29,14 +29,14 @@ const App: React.FC = () => {
         account,
         activate} = useWeb3React();
 
-    useEffect(() => { 
+    useEffect(() => {
         if (window.ethereum) {
             activate(new InjectedConnector({
                 supportedChainIds: [3],
               }));
          }
-    },[]);    
-    
+    },[]);
+
 
     return (
             <div className="rentonzilliqa">
@@ -53,7 +53,7 @@ const App: React.FC = () => {
                             <Route path="/listing/:id">
                                 <Listing />
                             </Route>
-                            <Route path="/poll/:id">
+                            <Route path="/poll/:id/:isActive">
                                 <Poll />
                             </Route>
                             <Redirect to={"/listings"} />
@@ -67,7 +67,7 @@ const App: React.FC = () => {
                         loading: { duration: 130000 },
                     }}
                 />
-                </div> 
+                </div>
             </div>
     );
 };
