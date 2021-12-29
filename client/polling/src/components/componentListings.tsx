@@ -11,6 +11,7 @@ import ManageListingModal from "./componentManageListingModal";
 import ImageGrid from "./componentImageGrid";
 import { useWeb3React  } from "@web3-react/core"
 import { NFTCOSMOS_ABI, NFTCOSMOS_ADDRESS, NFTPOLLFACTORY_ABI, NFTPOLLFACTORY_ADDRESS } from "../config";
+import { NFTPOLL_ABI } from "../config";
 import startPollTransition from '../functions/startPollTransition';
 import Web3 from 'web3'
 
@@ -30,14 +31,15 @@ const Listings: React.FC = (props) => {
     active,
     account} = useWeb3React();
 
+    //polled tokens
     const polls = listings?.filter((listing: any) => {
         return !listing.isPoll;
     });
 
+    //your tokens
     const nonPolls = listings?.filter((listing: any) => {
         return listing.isPoll;
     });
-
 
     const startPoll = () => {
         if(!active) return;
@@ -55,7 +57,8 @@ const Listings: React.FC = (props) => {
         const web3 = new Web3(library);
         let skyScraperContract = new library.eth.Contract(NFTCOSMOS_ABI as any, NFTCOSMOS_ADDRESS, account);
         let pollFactoryContract = new library.eth.Contract(NFTPOLLFACTORY_ABI as any, NFTPOLLFACTORY_ADDRESS, account);
-        formatListings(skyScraperContract,pollFactoryContract,  account, web3).then((value) => {setListings(value)});
+        formatListings(skyScraperContract,pollFactoryContract,  account, web3, NFTPOLL_ABI, library).then((value) => {setListings(value); console.log(value)});
+        console.log("set");
         console.log("set");
     },[active, account]);
 
@@ -99,7 +102,7 @@ const Listings: React.FC = (props) => {
                                             {...listing}
                                             onClick={() => {
                                                 history.push(
-                                                    `/poll/${listing.id}`
+                                                    `/poll/${listing.id}/${listing.isActive}`
                                                 );
                                             }}
                                         />

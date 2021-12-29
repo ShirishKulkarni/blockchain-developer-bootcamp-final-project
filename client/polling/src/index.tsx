@@ -5,12 +5,21 @@ import "./tailwind.output.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import ContextContainer from "./functions/contextContainer";
+import { Web3ReactProvider } from '@web3-react/core';
+import Web3 from 'web3';
+
+function getLibrary(provider: any) {
+    let webProvider = new Web3(provider);
+    return webProvider;
+}
 
 ReactDOM.render(
     <React.StrictMode>
-        <ContextContainer.Provider>
-            <App />
-        </ContextContainer.Provider>
+        <Web3ReactProvider getLibrary={getLibrary}>
+            <ContextContainer.Provider>
+                <App />
+            </ContextContainer.Provider>
+        </Web3ReactProvider>
     </React.StrictMode>,
     document.getElementById("root")
 );

@@ -12,10 +12,11 @@ type props = {
     tokenAddress: string;
     contractAddress: string;
     voteCount: any;
+    isActive: any;
 };
 
 const PollCard: React.FC<props> = (props) => {
-    const { image, id , tokenAddress, contractAddress, voteCount} = props;
+    const { image, id , tokenAddress, contractAddress, voteCount, isActive} = props;
     const [buyerAddress, setBuyerAddress] = useState<string>("");
     const [pollResponse, setPollResponse] = useState<string>("");
     let {
@@ -42,7 +43,7 @@ const PollCard: React.FC<props> = (props) => {
 
             <div className="order-1">
                 <div className="top-32 p-6  w-full">
-                {tokenAddress ? <Button
+                {(tokenAddress && !isActive)  ? <Button
                         modal
                         onClick={applyVote}
                         text="Vote!"

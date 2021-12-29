@@ -14,28 +14,31 @@ import {
 import { Web3ReactProvider } from '@web3-react/core'
 import Web3 from 'web3'
 import Poll from './components/componentPoll';
+import { useWeb3React,  } from "@web3-react/core";
+import detectEthereumProvider from '@metamask/detect-provider'
+import { InjectedConnector } from '@web3-react/injected-connector'
 declare let window: any;
 
 
 
 const App: React.FC = () => {
     const { setContract } = ContextContainer.useContainer();
+    let {
+        library,
+        active,
+        account,
+        activate} = useWeb3React();
 
-    useEffect(() => {
-        if (typeof window.ethereum !== 'undefined') {
-            console.log('MetaMask is installed!');
-          }
-    }, []);
+    useEffect(() => { 
+        if (window.ethereum) {
+            activate(new InjectedConnector({
+                supportedChainIds: [3],
+              }));
+         }
+    },[]);    
     
 
-    function getLibrary(provider: any) {
-        let webProvider = new Web3(provider);
-        return webProvider;
-    }
-
-
     return (
-        <Web3ReactProvider getLibrary={getLibrary}>
             <div className="rentonzilliqa">
                 <Header />
                 <div><Router>
@@ -66,7 +69,6 @@ const App: React.FC = () => {
                 />
                 </div> 
             </div>
-        </Web3ReactProvider>
     );
 };
 

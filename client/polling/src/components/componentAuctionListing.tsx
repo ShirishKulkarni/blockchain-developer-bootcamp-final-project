@@ -10,6 +10,7 @@ import Input from "./componentInput";
 import { useWeb3React } from "@web3-react/core"
 import { NFTCOSMOS_ABI, NFTCOSMOS_ADDRESS } from "../config";
 import Web3 from 'web3'
+import { NFTPOLL_ABI } from "../config";
 
 
 /*
@@ -39,7 +40,7 @@ const AuctionListing: React.FC = () => {
             const web3Ref = new Web3(library);
             setWeb3(web3Ref);
             let contract = new library.eth.Contract(NFTCOSMOS_ABI as any, NFTCOSMOS_ADDRESS, account);
-            formatListings(contract,null, account, web3Ref).then((values) => {
+            formatListings(contract,null, account, web3Ref,NFTPOLL_ABI, library).then((values) => {
                 const listing = values.filter((listing) => {
                     return listing.id === id;
                 })?.[0];

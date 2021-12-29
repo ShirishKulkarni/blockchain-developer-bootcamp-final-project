@@ -29,7 +29,7 @@ const Poll: React.FC = () => {
         library,
         active,
         account } = useWeb3React();
-    const { id } = useParams<{ id: string }>();
+    const { id , isActive} = useParams<{ id: string , isActive: string}>();
 
 
     useEffect(() => {
@@ -73,7 +73,8 @@ const Poll: React.FC = () => {
                             );
                         })}
                     </div>
-                    <div className="order-1">
+                    {isActive != "true" ? 
+                    (<div className="order-1">
                         <div className="top-32 p-6 w-full">
                             <Button
                                 modal
@@ -81,7 +82,9 @@ const Poll: React.FC = () => {
                                 text="End Polling!"
                             />
                         </div>
-                    </div>
+                    </div>)
+                    :
+                    <div></div>}
                 </>
             ) : (
                 <p className="text-xl text-center">No listings</p>

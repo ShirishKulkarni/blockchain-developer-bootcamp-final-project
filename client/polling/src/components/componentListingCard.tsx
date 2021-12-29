@@ -33,6 +33,7 @@ const ListingCard: React.FC<props> = (props) => {
                     backgroundSize: "cover",
                 }}
             >
+                 
             </div>
         </div>
     );
