@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/blockchain-developer-bootcamp-final-project/static/css/main.8d1da0b7.chunk.css",
-    "main.js": "/blockchain-developer-bootcamp-final-project/static/js/main.0307e7e6.chunk.js",
-    "main.js.map": "/blockchain-developer-bootcamp-final-project/static/js/main.0307e7e6.chunk.js.map",
-    "runtime-main.js": "/blockchain-developer-bootcamp-final-project/static/js/runtime-main.863c7ca1.js",
-    "runtime-main.js.map": "/blockchain-developer-bootcamp-final-project/static/js/runtime-main.863c7ca1.js.map",
-    "static/js/2.aafa6cb6.chunk.js": "/blockchain-developer-bootcamp-final-project/static/js/2.aafa6cb6.chunk.js",
-    "static/js/2.aafa6cb6.chunk.js.map": "/blockchain-developer-bootcamp-final-project/static/js/2.aafa6cb6.chunk.js.map",
-    "static/js/3.632df780.chunk.js": "/blockchain-developer-bootcamp-final-project/static/js/3.632df780.chunk.js",
-    "static/js/3.632df780.chunk.js.map": "/blockchain-developer-bootcamp-final-project/static/js/3.632df780.chunk.js.map",
-    "index.html": "/blockchain-developer-bootcamp-final-project/index.html",
-    "static/css/main.8d1da0b7.chunk.css.map": "/blockchain-developer-bootcamp-final-project/static/css/main.8d1da0b7.chunk.css.map",
-    "static/js/2.aafa6cb6.chunk.js.LICENSE.txt": "/blockchain-developer-bootcamp-final-project/static/js/2.aafa6cb6.chunk.js.LICENSE.txt",
-    "static/media/index.css": "/blockchain-developer-bootcamp-final-project/static/media/JosefinSans-Regular.511e3c31.ttf"
+    "main.css": "/static/css/main.ef279b92.chunk.css",
+    "main.js": "/static/js/main.301d8cf1.chunk.js",
+    "main.js.map": "/static/js/main.301d8cf1.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.fdcb338a.js",
+    "runtime-main.js.map": "/static/js/runtime-main.fdcb338a.js.map",
+    "static/js/2.5b3e3a62.chunk.js": "/static/js/2.5b3e3a62.chunk.js",
+    "static/js/2.5b3e3a62.chunk.js.map": "/static/js/2.5b3e3a62.chunk.js.map",
+    "static/js/3.632df780.chunk.js": "/static/js/3.632df780.chunk.js",
+    "static/js/3.632df780.chunk.js.map": "/static/js/3.632df780.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.ef279b92.chunk.css.map": "/static/css/main.ef279b92.chunk.css.map",
+    "static/js/2.5b3e3a62.chunk.js.LICENSE.txt": "/static/js/2.5b3e3a62.chunk.js.LICENSE.txt",
+    "static/media/index.css": "/static/media/JosefinSans-Regular.511e3c31.ttf"
   },
   "entrypoints": [
-    "static/js/runtime-main.863c7ca1.js",
-    "static/js/2.aafa6cb6.chunk.js",
-    "static/css/main.8d1da0b7.chunk.css",
-    "static/js/main.0307e7e6.chunk.js"
+    "static/js/runtime-main.fdcb338a.js",
+    "static/js/2.5b3e3a62.chunk.js",
+    "static/css/main.ef279b92.chunk.css",
+    "static/js/main.301d8cf1.chunk.js"
   ]
 }
