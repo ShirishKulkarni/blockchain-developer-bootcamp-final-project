@@ -1,6 +1,6 @@
-export const NFTCOSMOS_ADDRESS = '0xBE7b86606Fe5711a8A4A66490e76B2e46658a6ce'
+export const NFTCOSMOS_ADDRESS = '0x0E61f1530C73cb2d326c9B0D089731FBCaE8c2fF'
 
-export const NFTPOLLFACTORY_ADDRESS = '0x76E5A4658Eaf4106a1C1618782977AF5755cEaeA'
+export const NFTPOLLFACTORY_ADDRESS = '0x2E5B4B2deca61D028aC7e5359fB73c6DeeF67eF6'
 
 export const NFTCOSMOS_ABI = [
 	{
@@ -982,6 +982,41 @@ export const NFTPOLL_ABI =[
 				"internalType": "bool",
 				"name": "",
 				"type": "bool"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "pollWinners",
+		"outputs": [
+			{
+				"components": [
+					{
+						"internalType": "address",
+						"name": "nftAddr",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "voteCount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "uri",
+						"type": "string"
+					}
+				],
+				"internalType": "struct NFTPOLL.Item[]",
+				"name": "",
+				"type": "tuple[]"
 			}
 		],
 		"stateMutability": "view",
