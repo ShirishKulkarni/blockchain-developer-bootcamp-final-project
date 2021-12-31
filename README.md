@@ -1,7 +1,7 @@
 # nft-pop
 https://shirishkulkarni.github.io/listings \
 # Screencast: part1: https://www.loom.com/share/bc78588212cb40078477dd490b056bc1
-              part2: https://www.loom.com/share/1420fc94e7844d41ba6dd6cc95050ec4
+#              part2: https://www.loom.com/share/1420fc94e7844d41ba6dd6cc95050ec4
 # Discord: shirishkulk
 # NFT Collectible with Popularity Voting
 
